@@ -639,8 +639,6 @@ namespace S3
                 key = uri.getPath().substr(1);
             }
 
-            if (key.empty() || key == "/")
-                throw Exception("Key name is empty in virtual hosted style S3 URI: " + key + " (" + uri.toString() + ")", ErrorCodes::BAD_ARGUMENTS);
             boost::to_upper(name);
             if (name != S3 && name != COS)
             {
